@@ -6,8 +6,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+.d-flex {
+    display: flex;
+}
+
 header {
-  display: flex;
   margin-top: 10px;
   justify-content: center;
   align-items: center;
