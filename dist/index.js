@@ -116,7 +116,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n\n//# sourceURL=webpack://javascript-capstone/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./src/index.css\");\n/* harmony import */ var _modules_displayShow_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/displayShow.js */ \"./src/modules/displayShow.js\");\n\r\n\r\n\r\n(0,_modules_displayShow_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack://javascript-capstone/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/displayShow.js":
+/*!************************************!*\
+  !*** ./src/modules/displayShow.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getShows_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getShows.js */ \"./src/modules/getShows.js\");\n\r\n\r\nconst allShows = document.querySelector(\".allShows\");\r\nallShows.innerHTML = \"\";\r\n\r\nconst showTemplate = (Shows) => {\r\n  Shows.forEach((show) => {\r\n    const showInfo = document.createElement(\"li\");\r\n    showInfo.className = \"show\";\r\n    showInfo.id = show.id;\r\n    showInfo.innerHTML = `\r\n        <img id=\"show-img\" src=${show.image.medium} alt=\"show image\">\r\n        <div id=\"like-show\">\r\n            <h2 id=\"show-title\">${show.name}</h2>\r\n            <i class=\"far fa-heart\" id=\"like-icon\"></i>\r\n        </div>\r\n        <p id=\"likes\">0 likes</p>\r\n        <button type=\"button\" id=\"comment-btn\">Comments</button\r\n        `;\r\n    allShows.appendChild(showInfo);\r\n  });\r\n};\r\n\r\nconst displayShows = async () => {\r\n  const fetchedShows = await (0,_getShows_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n  const Shows = fetchedShows.slice(0, 20);\r\n  showTemplate(Shows);\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayShows);\r\n\n\n//# sourceURL=webpack://javascript-capstone/./src/modules/displayShow.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getShows.js":
+/*!*********************************!*\
+  !*** ./src/modules/getShows.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst url = 'https://api.tvmaze.com/shows';\r\n\r\nconst getshow = async () => {\r\n    const data = await fetch(`${url}`);\r\n    return data.json();\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getshow);\n\n//# sourceURL=webpack://javascript-capstone/./src/modules/getShows.js?");
 
 /***/ })
 
