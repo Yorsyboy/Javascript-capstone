@@ -41,6 +41,7 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.12",
     "jest-environment-jsdom": "^28.1.0"
   }
 }

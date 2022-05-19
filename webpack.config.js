@@ -31,4 +31,7 @@ module.exports = {
       },
     ],
   },
+  externals: {
+    fetch: 'cross-fetch',
+  },
 };
