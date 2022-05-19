@@ -16,7 +16,8 @@ const showTemplate = (Shows) => {
         </div>
         <div class="d-flex like">
         <p id="likes">0 likes</p>
-        <button type="button" id="comment-btn">Comments</button
+   
+        <button type="button" id="${showInfo.id}" class="comment-btn"  onclick"commentsPopUp(${showInfo.id})" role="button">Comments</button
         </div>`;
     allShows.appendChild(showInfo);
   });
