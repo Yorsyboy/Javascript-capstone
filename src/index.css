@@ -114,8 +114,17 @@ i:hover {
 
 #likes {
   align-self: end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
   margin: 0;
   font-size: 20px;
+}
+
+.fa-heart {
+  color: rgb(245, 17, 17);
+  font-size: 18px;
 }
 
 #comment-btn {
