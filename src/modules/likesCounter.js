@@ -20,7 +20,8 @@ const postLikes = async (showId, element) => {
   const likesArray = await getLikesData();
   likesArray.map((a) => {
     if (a.item_id === showId) {
-      element.textContent = `${a.likes} Likes`;
+      element.innerHTML = `${a.likes} Likes
+      <button type="button" id="${showId}" class="comment-btn"  onclick"commentsPopUp(${showId})" role="button">Comments</button>`;
     }
     return a;
   });
