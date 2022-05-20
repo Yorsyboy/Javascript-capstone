@@ -67,25 +67,45 @@ const commentsPopUp = async (data) => {
         addMovieComment(comment);
       };
 
-      // Show Comments
       const commentSection = document.querySelector('.comments-list-body');
       const commentList = document.createElement('ul');
       commentList.setAttribute('class', 'd-flex flex-d-c');
+      // UPDATE COMMENTS
+      const updateComments = () => {
+        const date = new Date();
+        const day = date.getDay();
+        const month = date.getMonth();
+        const year = date.getFullYear();
+        commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList"> 
+          <span>${year} ${-month} ${-day}</span>  <span>${viewerUserName.value}</span>  <span>${viewerComment.value}</span></li>
+          `;
+        commentSection.appendChild(commentList);
+      };
+      // Show Comments
       const displayComment = async (commentId) => {
         const allComments = await fetchComment(commentId);
-        allComments.forEach((data) => {
-          commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList"> <span>${data.creation_date}</span>  <span>${data.username}</span>  <span>${data.comment}</span></li>
+        try {
+          allComments.forEach((data) => {
+            commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList"> 
+          <span>${data.creation_date}</span>  <span>${data.username}</span>  <span>${data.comment}</span></li>
+          `;
+            commentSection.appendChild(commentList);
+          });
+        } catch (err) {
+          commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList">${err.dara}</li>
           `;
           commentSection.appendChild(commentList);
-        }).catch((err) => err);
+        }
       };
 
       displayComment(commentId);
+
       const commentsBtn = document.querySelector('.commentBtn');
       // listen to users enevent
       commentsBtn.addEventListener('click', (e) => {
         e.preventDefault();
         submitViewerInfo();
+        updateComments();
         viewerUserName.value = '';
         viewerComment.value = '';
       });
