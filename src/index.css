@@ -145,9 +145,10 @@ footer {
 }
 
 .foot-note {
-  margin-left: 12%;
   font-weight: bold;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+  color: rgb(29, 3, 29);
 }
 
 .modal {
@@ -194,7 +195,7 @@ footer {
 }
 
 #comment-form {
-  width: 50%;
+  width: 60%;
   margin: 10px auto;
   background-color: blueviolet;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8);
@@ -259,6 +260,11 @@ h6 {
   overscroll-behavior: contain;
 }
 
-.vierwerCommentList:nth-child(even) {
-  background: #fbfdff;
+.flex-d-r {
+  flex-direction: row;
+  width: 100%;
+}
+
+p {
+  width: 100%;
 }

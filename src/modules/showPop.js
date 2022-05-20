@@ -1,5 +1,6 @@
 import displayShows from './displayShow.js';
 import { addMovieComment, fetchComment } from './commentsApi.js';
+import { commentCountDisplay } from './commentsCounter.js';
 
 const showModal = document.querySelector('#modal-section');
 // PopUp method
@@ -22,15 +23,17 @@ const commentsPopUp = async (data) => {
       <div class="d-flex flex-d-c">
       <h3 class="d-flex">Premiered On: ${show.premiered}</h3>
       <p class="d-flex show-desc">${show.summary}</p>
-      <h4 class="d-flex mt-1">Language: ${show.language}</h4>
+      <div class="d-flex flex-d-r s-around">
+      <p class="d-flex mt-1">Language: ${show.language}</p>
+      <p class="d-flex mt-1">Officialsite: <a href="${show.officialSite}" class="mt-0 mb-0">${show.name}</a></p>
       </div>
-      <h3 class="d-flex center"><i class="fa fa-fw fa-comment mb-5"></i>  Comments(0)</h3>
-
+      </div>
+      <h3 class="d-flex center"><i class="fa fa-fw fa-comment mb-5 commentCount d-flex mr-3"></i> </h3>
       <div class="flex-d-c mb-5 ">
       <ul class="d-flex s-around comment-list-header font-w-bold">
       <li>Posted </li> <li>By</li> <li> Comment</li>
       </ul>
-      <div class="comments-list-body">
+      <div class="comments-list-body bg-light">
       </div>
       </div>
       <form class="card bg-light mb-5" id="comment-form" method="POST">
@@ -47,10 +50,12 @@ const commentsPopUp = async (data) => {
       });
       showModal.appendChild(popModal);
       showModal.style.display = ('block');
+      document.body.style.overflowY = ('hidden');
       const closeBtn = document.querySelector('.fa-window-close');
       document.addEventListener('click', (event) => {
         if (event.target === closeBtn) {
           showModal.style.display = 'none';
+          document.body.style.overflowY = ('auto');
           window.location.reload();
         }
       });
@@ -70,8 +75,8 @@ const commentsPopUp = async (data) => {
       const commentSection = document.querySelector('.comments-list-body');
       const commentList = document.createElement('ul');
       commentList.setAttribute('class', 'd-flex flex-d-c');
-      // UPDATE COMMENTS
-      const updateComments = () => {
+      // update comments
+      const updateComments = async () => {
         const date = new Date();
         const day = date.getDay();
         const month = date.getMonth();
@@ -80,10 +85,12 @@ const commentsPopUp = async (data) => {
           <span>${year} ${-month} ${-day}</span>  <span>${viewerUserName.value}</span>  <span>${viewerComment.value}</span></li>
           `;
         commentSection.appendChild(commentList);
+        await commentCountDisplay();
       };
       // Show Comments
       const displayComment = async (commentId) => {
         const allComments = await fetchComment(commentId);
+
         try {
           allComments.forEach((data) => {
             commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList"> 
@@ -92,20 +99,25 @@ const commentsPopUp = async (data) => {
             commentSection.appendChild(commentList);
           });
         } catch (err) {
-          commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList">${err.dara}</li>
+          commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList text-danger">No comment has been posted yet.</li>
           `;
           commentSection.appendChild(commentList);
         }
+        await commentCountDisplay();
       };
 
       displayComment(commentId);
-
+      const commentsNumber = document.querySelector('.commentCount');
+      commentCountDisplay(commentId, commentsNumber);
       const commentsBtn = document.querySelector('.commentBtn');
       // listen to users enevent
       commentsBtn.addEventListener('click', (e) => {
         e.preventDefault();
         submitViewerInfo();
-        updateComments();
+        if (commentCountDisplay(commentId, commentsNumber)) {
+          updateComments();
+        }
+
         viewerUserName.value = '';
         viewerComment.value = '';
       });
