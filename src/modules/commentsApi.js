@@ -1,11 +1,17 @@
-const appId = 'f5fDagMARo6BC6LKqLaP/';
+const appId = 'cjvODzXExy4r23UR9owN/';
 const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const endPoint = 'comments';
 // get comment
 const fetchComment = async (showId) => {
-  const response = await fetch(`${commentUrl + appId + endPoint}?item_id=${showId}`);
-  const data = response.json();
-  return (data);
+  const res = await fetch(`${commentUrl + appId + endPoint}?item_id=${showId}`)
+    .then((response) => {
+      if (!response.ok) return [];
+
+      return response.json();
+    })
+    .catch((error) => error.message);
+
+  return res;
 };
 
 // Add comment
