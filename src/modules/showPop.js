@@ -27,7 +27,7 @@ const commentsPopUp = async (data) => {
       <p class="d-flex show-desc">${show.summary}</p>
       <h4 class="d-flex mt-1">Language: ${show.language}</h4>
       </div>
-      <h3 class="d-flex center text-success"><i class="mb-5 commentsTotal">${countComment}</i> Comment(s)</h3>
+      <h3 class="d-flex center text-success"><i class="mb-5 commentsTotal s-around">${countComment}</i><p> Comment(s)</p></h3>
 
       <div class="flex-d-c mb-5 ">
       <ul class="d-flex s-around comment-list-header font-w-bold">
