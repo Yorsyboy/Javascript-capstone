@@ -46,6 +46,12 @@ header {
   width: 100%;
 }
 
+#shows-counter {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(117, 17, 95);
+}
+
 a {
   text-decoration: none;
   margin-right: 5%;
