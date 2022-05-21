@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap");
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: purple;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-d-c {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+}
+
+.s-between {
+  justify-content: space-between;
+}
+
+.s-around {
+  justify-content: space-around;
+}
+
+header {
+  margin-top: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(158, 158, 158);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+#shows-counter {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(117, 17, 95);
+}
+
+a {
+  text-decoration: none;
+  margin-right: 5%;
+  font-weight: bolder;
+  color: rgb(117, 17, 95);
+  font-size: 18px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  margin-right: 5%;
+  width: 50px;
+  height: 50px;
+  background: url(https://toppng.com/uploads/preview/free-icons-png-movie-icon-logo-115631952344tpobh0wuu.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.allShows {
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 98%;
+  margin: 8% auto;
+}
+
+.show {
+  flex-flow: column;
+  justify-content: space-between;
+  width: 232px;
+  height: 370px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #fff;
+}
+
+#show-img {
+  height: 275px;
+  width: 210px;
+}
+
+#like-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+#show-title {
+  margin: 0;
+  font-size: 19px;
+}
+
+.like {
+  gap: 20px;
+}
+
+#likes {
+  align-self: end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 20px;
+}
+
+.fa-heart {
+  color: rgb(245, 17, 17);
+  font-size: 18px;
+}
+
+#comment-btn {
+  align-self: end;
+  justify-self: end;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6%;
+  border-radius: 2px;
+  position: fixed;
+  padding: 15px;
+  color: rgb(2, 2, 2);
+  background-color: rgb(207, 206, 206);
+}
+
+.foot-note {
+  margin-left: 12%;
+  font-weight: bold;
+  width: 100%;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  overflow: auto;
+}
+
+.modal-content {
+  width: 80%;
+  height: auto;
+  margin: 5% auto;
+  background-color: #fff;
+  box-shadow: 0 10px 10px 0 rgb(24, 4, 43);
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.jc-flex-end {
+  justify-content: flex-end;
+}
+
+.fa-window-close {
+  font-size: 2em;
+  padding: 20px;
+  color: rgb(146, 150, 146);
+}
+
+.fa-window-close:hover {
+  color: rgb(117, 17, 95);
+}
+
+.popup-img {
+  width: 30%;
+  margin: 0 auto;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+#comment-form {
+  width: 50%;
+  margin: 10px auto;
+  background-color: blueviolet;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+#showDesc {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.form {
+  justify-content: center;
+}
+
+.fa-comment {
+  color: rgb(44, 161, 89);
+}
+
+button {
+  width: auto;
+  color: rgb(122, 4, 122);
+  font-weight: bold;
+  background-color: rgb(187, 179, 179);
+  padding: 5px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+button:hover {
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(122, 4, 122);
+  padding: 6px;
+}
+
+h1,
+h2,
+h3,
+h4 h5,
+h6 {
+  font-weight: bold;
+}
+
+.font-w-bold {
+  font-weight: bold;
+}
+
+.comments-list-body {
+  background: rgb(224, 228, 233);
+  box-shadow: 0 2px 4px 0 rgb(54, 54, 54);
+  padding: 10px;
+  font-weight: bold;
+  width: 90%;
+  margin: 0 auto;
+  height: 10%;
+  overscroll-behavior: contain;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.vierwerCommentList:nth-child(even) {
+  background: #fbfdff;
+}
