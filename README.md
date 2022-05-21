@@ -11,9 +11,7 @@
 - Cascading Style Sheet (CSS).
 - JavaScript (JS).
 - webpack JS bundler
-
-## Live Presentation
- [View Live Presentation](https://drive.google.com/file/d/1MWXkNu3V8RE__Xzb8qz2gKPpg38KMZjA/view?usp=sharing)
+)
 ## Live Demo
 
 [View Live Demo](https://yorsyboy.github.io/Javascript-capstone/)
