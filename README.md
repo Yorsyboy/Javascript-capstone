@@ -16,7 +16,7 @@
  [View Live Presentation]()
 ## Live Demo
 
-[View Live Demo]()
+[View Live Demo](https://yorsyboy.github.io/Javascript-capstone/)
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 

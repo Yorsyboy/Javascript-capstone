@@ -263,6 +263,8 @@ h6 {
   margin: 0 auto;
   height: 10%;
   overscroll-behavior: contain;
+  overflow-y: auto;
+  max-height: 200px;
 }
 
 .vierwerCommentList:nth-child(even) {

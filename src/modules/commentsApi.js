@@ -1,4 +1,4 @@
-const appId = 'grY0oMLQ1VudgPyHcHvG/';
+const appId = 'MbVmeFRQBYSQ9misQLEV/';
 const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 const endPoint = 'comments';
 // get comment
