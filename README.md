@@ -1,6 +1,10 @@
+
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # TvShows
 **TvShows** is a web application based on [TVmaze external API](https://www.tvmaze.com/api) that fetches data about TV series and movies. It enables the user to **Like** and **Comment** on a particular **Movie** of their choice.
+
+![tvshowsapp](https://user-images.githubusercontent.com/28694196/169646047-31387de7-9fb9-4edf-8b26-d084431a84af.png)
+
 ## Built With
 
 - HyperText Markup Language (HTML).
