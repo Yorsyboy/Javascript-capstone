@@ -75,12 +75,13 @@ const commentsPopUp = async (data) => {
       commentList.setAttribute('class', 'd-flex flex-d-c');
       // UPDATE COMMENTS
       const updateComments = () => {
-        const date = new Date();
-        const day = date.getDay();
-        const month = date.getMonth();
-        const year = date.getFullYear();
+        let today = new Date();
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+        today = `${year}-${month}-${day}`;
         commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList"> 
-          <span>${year} ${-month} ${-day}</span>  <span>${viewerUserName.value}</span>  <span>${viewerComment.value}</span></li>
+          <span>${today}</span>  <span>${viewerUserName.value}</span>  <span>${viewerComment.value}</span></li>
           `;
         commentSection.appendChild(commentList);
       };
