@@ -20,8 +20,16 @@ body {
 }
 
 .show {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(300px, 1fr)) !important;
+  flex-flow: column;
+  justify-content: space-evenly;
+  width: 232px;
+  height: 370px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #fff;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
 }
 
 .flex-d-c {
@@ -89,19 +97,6 @@ i:hover {
   flex-wrap: wrap;
   width: 94%;
   margin: 10% auto;
-}
-
-.show {
-  flex-flow: column;
-  justify-content: space-evenly;
-  width: 232px;
-  height: 370px;
-  border-radius: 5px;
-  background-color: white;
-  padding: 10px;
-  box-shadow: 5px 10px 18px #fff;
-  transition: all 0.3s ease-in-out;
-  margin: 0 auto;
 }
 
 #show-img {
